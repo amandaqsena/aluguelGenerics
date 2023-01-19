@@ -19,18 +19,23 @@ public class Aplicacao {
         Pessoa boikobank = new Juridica();
 
         
-        Aluguel<Alugavel> aluguel = new Aluguel<>();
-        List<Double> testes = List.of(aluguel.orcaPreco(fusquinha, amanda, 3),
-                aluguel.orcaPreco(fusquinha, amanda, 5),
-                aluguel.orcaPreco(fusquinha, boikobank, 3),
-                aluguel.orcaPreco(fusquinha, boikobank, 5),
-                aluguel.orcaPreco(civic, amanda, 3),
-                aluguel.orcaPreco(civic, amanda, 5),
-                aluguel.orcaPreco(jeep, boikobank, 3),
-                aluguel.orcaPreco(jeep, boikobank, 5)
+        List<Aluguel<Alugavel>> aluguelVeiculos = List.of(
+                new Aluguel<>(fusquinha, amanda, 3),
+                new Aluguel<>(fusquinha, amanda, 5),
+                new Aluguel<>(fusquinha, boikobank, 3),
+                new Aluguel<>(fusquinha, boikobank, 5),
+                new Aluguel<>(civic, amanda, 3),
+                new Aluguel<>(civic, amanda, 5),
+                new Aluguel<>(jeep, boikobank, 3),
+                new Aluguel<>(jeep, boikobank, 5)
         );
 
-        testes.forEach(System.out::println);
+        Historico historico = new Historico();
+        aluguelVeiculos.forEach(it-> historico.adicionarHistorico(it.getCliente(), it));
+        System.out.println(historico.getHistorico(amanda));
+        System.out.println("ALUGUEL DE VEICULOS");
+        //aluguelVeiculos.forEach(it-> System.out.println(it.orcaPreco()));
+
 
 
     }
