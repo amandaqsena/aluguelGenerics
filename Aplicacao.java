@@ -32,9 +32,12 @@ public class Aplicacao {
 
         Historico historico = new Historico();
         aluguelVeiculos.forEach(it-> historico.adicionarHistorico(it.getCliente(), it));
-        System.out.println(historico.getHistorico(amanda));
+        
         System.out.println("ALUGUEL DE VEICULOS");
-        //aluguelVeiculos.forEach(it-> System.out.println(it.orcaPreco()));
+        aluguelVeiculos.forEach(it-> System.out.println(it.orcaPreco()));
+
+        System.out.println("Historico Amanda");
+        System.out.println(historico.getHistorico(amanda));
 
 
 
