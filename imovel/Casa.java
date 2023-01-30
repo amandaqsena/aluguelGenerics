@@ -1,3 +1,5 @@
+package aluguelGenerics.imovel;
+
 import aluguelGenerics.Alugavel;
 
 public class Casa extends Imovel implements Alugavel {
