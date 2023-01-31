@@ -12,5 +12,6 @@ public abstract class Imovel {
             case Ceilandia: return 0.5;
             case LagoSul: return 1;
         }
+        throw new IllegalArgumentException("Bairro inválido");
     }
 }
